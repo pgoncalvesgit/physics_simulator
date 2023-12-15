@@ -1,0 +1,1 @@
+AVOGADRO_NUMBER = 6.022 * pow(10, 23)
