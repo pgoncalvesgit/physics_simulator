@@ -10,7 +10,7 @@ def convert_with_precision(num, from_prefix, to_prefix):
     from_prefix_base_10_exponent = PREFIX_TO_EXP[from_prefix]
     to_prefix_base_10_exponent = PREFIX_TO_EXP[to_prefix]
 
-    result = 0
+    result: int
     if from_prefix_base_10_exponent == to_prefix_base_10_exponent:
         result = num
 
@@ -20,15 +20,17 @@ def convert_with_precision(num, from_prefix, to_prefix):
     else:
         diff_exp = from_prefix_base_10_exponent - to_prefix_base_10_exponent
         reduced_num = num
-        while diff_exp != 0 and result % 10 == 0:
+        while diff_exp != 0 and reduced_num // 10 * 10 == reduced_num:
             reduced_num = reduced_num // 10
-            diff_exp = diff_exp + 1
+            diff_exp += 1
+        result = reduced_num
         if diff_exp != 0:
-            result = reduced_num * pow(10, diff_exp)
-        else:
-            result = reduced_num
+            result = float(result)
+        while diff_exp < 0:
+            result = result / 10
+            diff_exp += 1
     if result != int(result):
-        print("Num: %s can't be converted from %s to %s", str(num), PREFIX_TO_STR[from_prefix], PREFIX_TO_STR[to_prefix])
+        print("Num: %s can't be converted from %s to %s" % (str(num), PREFIX_TO_STR[from_prefix], PREFIX_TO_STR[to_prefix]))
         if HIGH_PRECISION_FORCE:
             raise ImpossibleConversion
         else:
