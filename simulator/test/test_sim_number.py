@@ -1,7 +1,7 @@
 import pytest
 
 from ..sim_number import SimNumber
-from ..si_units.si_prefixes import Prefix, PREFIX_TO_EXP, SMALLEST_PREFIX
+from ..units.si_prefixes import Prefix, PREFIX_TO_EXP, SMALLEST_PREFIX
 
 
 class SimNumberTester():

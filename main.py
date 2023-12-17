@@ -4,7 +4,7 @@
 # ------------------------
 
 from gui.api import endpoints as api
-from simulator.si_units.si_converter import convert_with_precision, Prefix
+from simulator.units.si_converter import convert_with_precision, Prefix
 from simulator.config.constants import *
 
 print("result: " + str(convert_with_precision(AVOGADRO_NUMBER, Prefix.NONE, Prefix.YOTTA)))
