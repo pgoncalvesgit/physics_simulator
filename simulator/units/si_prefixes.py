@@ -1,5 +1,5 @@
 from enum import Enum
-from simulator import symbols as sy
+from simulator.units import symbols as sy
 
 
 class UnknownPrefix(Exception):

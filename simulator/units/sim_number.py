@@ -1,7 +1,7 @@
 from simulator.units.si_converter import convert_with_precision
 from simulator.units.si_prefixes import Prefix, return_smaller_prefix, floor_prefix, \
 	SMALLEST_PREFIX, PREFIX_TO_STR, PREFIX_TO_EXP
-from .config.config import HIGH_PRECISION_WARNINGS, HIGH_PRECISION_DEBUGGING
+from simulator.config.config import HIGH_PRECISION_WARNINGS, HIGH_PRECISION_DEBUGGING
 import logging
 import traceback
 
